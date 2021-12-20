@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="search-cont">
+        <label id="search-label" for="search-bar"
+          >Enter a City, Followed by State</label
+        >
+        <input
+          id="search-bar"
+          type="text"
+          placeholder="Ex. Boston, Massachusetts"
+        />
+        <!-- <p class="error-msg">Enter a valid city</p> -->
+      </div>
+      <section class="head">
+        <h2 class="location">Boston</h2>
+        <h2 class="weather">Clear</h2>
+        <h2 class="temp">30F</h2>
+        <div class="icon"><i class="fas fa-cloud-showers-heavy fa-2x"></i></div>
+      </section>
+      <section class="content">
+        <ul class="item-list">
+          <li class="wind"></li>
+          <li class="cloud-cover"></li>
+          <li class="humidity"></li>
+          <li class="pressure"></li>
+        </ul>
+      </section>
+      <button id="state0" class="the-button">Change City</button>
+    </div>
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>

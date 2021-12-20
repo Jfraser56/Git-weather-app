@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+body {
+  background: url(./pexels-magda-ehlers-2114014.jpeg) no-repeat top;
+  background-size: cover;
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(rgba(85, 172, 238, 0.3), rgba(25, 51, 71, 0.3));
+  backdrop-filter: blur(20px);
+  margin: 5rem auto;
+  padding: 2rem;
+  border-radius: 5px;
+  transition: 1s ease;
+}
+
+/* Search Bar --Hidden */
+.search-cont {
+  position: absolute;
+  top: 35%;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+#search-label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  display: block;
+}
+
+#search-bar {
+  height: 3rem;
+  width: 20rem;
+  margin: 1rem 1rem 0.5rem 1rem;
+  padding: 5px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  z-index: 5;
+}
+
+/* Header */
+
+.head {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  transition: 1s ease;
+}
+.location {
+  font-size: 2rem;
+}
+.weather,
+.temp {
+  font-size: 1.3rem;
+}
+
+.icon {
+  margin: 1rem auto;
+}
+
+/* Weather main content */
+.content {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  color: black;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+
+.item-list {
+  list-style: none;
+}
+
+li {
+  height: 40px;
+  padding-top: 10px;
+  background: #eee;
+}
+
+li:not(:last-child) {
+  border-bottom: #ccc dotted 1px;
+}
+
+.the-button {
+  position: absolute;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #eee;
+  cursor: pointer;
+  transform: translateY(25rem);
+  transition: 0.5s ease;
+}
+
+/* Location Change state */
+.search-state {
+  border-radius: 50%;
+}
+.search-state .head,
+.search-state .content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.search-state .search-cont {
+  opacity: 1;
+}
+
+.search-state .the-button {
+  border-radius: 50px;
+  transform: translateY(17rem);
+}
+
+/* Error State Container */
+.err > *:not(:last-child) {
+  visibility: hidden;
+}
+
+.err .head > *:first-child {
+  visibility: visible;
+}
