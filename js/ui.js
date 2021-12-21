@@ -59,18 +59,16 @@ export class UI {
       .then((icon) => (iconElement.className = icon));
   }
 
-  insertWind(container, windValue) {
-    const { windDirection } = windValue;
-    const { windSpeed } = windValue;
+  async insertWind(container, windValue) {
+    const windDirection = await windValue.windDirection;
+    const windSpeed = await windValue.windSpeed;
 
-    windDirection
-      .then((res) => (container.textContent = `Wind: ${res} @ `))
-      .then(() =>
-        windSpeed.then((res) => (container.textContent += `${res}mph`))
-      );
+    container.textContent = `Wind: ${windDirection} @ `;
+    container.textContent += `${windSpeed}mph`;
   }
 
-  insertInfo(container, info, message, value) {
-    info.then((res) => (container.textContent = `${message}: ${res}${value}`));
+  async insertInfo(container, info, message, value) {
+    const result = await info;
+    container.textContent = `${message}: ${result}${value}`;
   }
 }
