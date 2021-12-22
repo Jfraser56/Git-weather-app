@@ -39,7 +39,7 @@ export class UI {
   insertIcon(container, icon) {
     const iconElement = container.firstElementChild;
     let iconType;
-    const options = ["Snow", "Rain", "Clouds", "Clear", "Mist"];
+    const options = ["Snow", "Rain", "Clouds", "Clear", "Mist", "Fog"];
     iconType = icon
       .then((res) => options.indexOf(res))
       .then((index) => {
@@ -54,6 +54,8 @@ export class UI {
             return (iconType = "fas fa-sun fa-2x");
           case 4:
             return (iconType = "fas fa-wind fa-2x");
+          case 5:
+            return (iconType = "fas fa-smog fa-2x");
         }
       })
       .then((icon) => (iconElement.className = icon));
